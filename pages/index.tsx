@@ -9,13 +9,13 @@ interface Props {
 const Home: NextPage<Props> = props => {
   return (
     <>
-      <Followers followers={props.followers}/>
+      <Followers followers={props.followers} />
     </>
   );
 };
 
 export const getServerSideProps: GetServerSideProps<Props> = async ctx => {
-  const followers = await axios.get("http://localhost:3000/api/followers");
+  const followers = await axios.get("http://localhost:3000/api/followersList");
 
   return {
     props: {
